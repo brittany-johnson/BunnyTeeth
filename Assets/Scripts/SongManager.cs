@@ -34,13 +34,17 @@ public class SongManager : MonoBehaviour
     public float removePos;
     public float beatOfThisNote;
     public GameObject letterS_prefab;
-    public GameObject letterA_prefab; 
-    public GameObject letterD_prefab;
-    public GameObject letterW_prefab;
+    public GameObject letterD_prefab; 
+    public GameObject letterF_prefab;
+    public GameObject letterJ_prefab;
+    public GameObject letterK_prefab;
+    public GameObject letterL_prefab;
     private GameObject letterS;
-    private GameObject letterA;
     private GameObject letterD;
-    private GameObject letterW;
+    private GameObject letterF;
+    private GameObject letterJ;
+    private GameObject letterK;
+    private GameObject letterL;
     public GameObject Beats;
     public GameObject SpawnPoint;
 
@@ -131,30 +135,36 @@ public class SongManager : MonoBehaviour
 
         
     }
+// S D F J K L 
 // 67, 69, 71, 72, 74, 76, 77, 79, 81, 83, 84, 86 
     void noteValueToLetterPrefab(long value)
     {    
+        Debug.Log(value);
         switch (value)
         {
             case 67:
-            case 72: 
-            case 86:
-                letterA = Instantiate(letterA_prefab, new Vector3(letterA_prefab.transform.position.x, SpawnPoint.transform.position.y, 0f), Quaternion.identity ,Beats.transform);
-                break;
-            case 69:
-            case 74:
-            case 83:
-                letterW = Instantiate(letterW_prefab, new Vector3(letterW_prefab.transform.position.x, SpawnPoint.transform.position.y, 0f), Quaternion.identity ,Beats.transform);
-                break;
+            case 69: 
             case 71:
-            case 79:
-            case 81:
                 letterS = Instantiate(letterS_prefab, new Vector3(letterS_prefab.transform.position.x, SpawnPoint.transform.position.y, 0f), Quaternion.identity ,Beats.transform);
                 break;
-            case 76:
-            case 77:
-            case 84:
+            case 72:
                 letterD = Instantiate(letterD_prefab, new Vector3(letterD_prefab.transform.position.x, SpawnPoint.transform.position.y, 0f), Quaternion.identity ,Beats.transform);
+                break;
+            case 74:
+            case 76:
+                letterF = Instantiate(letterF_prefab, new Vector3(letterF_prefab.transform.position.x, SpawnPoint.transform.position.y, 0f), Quaternion.identity ,Beats.transform);
+                break;
+            case 77:
+            case 79:
+                letterJ = Instantiate(letterJ_prefab, new Vector3(letterJ_prefab.transform.position.x, SpawnPoint.transform.position.y, 0f), Quaternion.identity ,Beats.transform);
+                break;
+            case 81:
+            case 83:
+                letterK = Instantiate(letterK_prefab, new Vector3(letterK_prefab.transform.position.x, SpawnPoint.transform.position.y, 0f), Quaternion.identity ,Beats.transform);
+                break;
+            case 84:
+            case 86:
+                letterL = Instantiate(letterL_prefab, new Vector3(letterL_prefab.transform.position.x, SpawnPoint.transform.position.y, 0f), Quaternion.identity ,Beats.transform);
                 break;
         }
     }
@@ -163,6 +173,7 @@ public class SongManager : MonoBehaviour
 // w -4.33
 // s -2.36
 // d -0.39
+// a -6.25
 
 //Next:
     // current tick / delta ticker per quarter note = current quarter note
